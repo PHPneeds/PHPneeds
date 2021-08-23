@@ -1,2 +1,2 @@
 # PHPneeds
-PHPneeds is a lightweight non-mvc PHP library for quickly start a project.
+PHPneeds is a lightweight non-MVC PHP library for quickly start a project.
