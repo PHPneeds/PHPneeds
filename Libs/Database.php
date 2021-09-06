@@ -1,14 +1,12 @@
-<?php
+<?php declare( strict_types=1 );
 
-declare( strict_types=1 );
-
-namespace mertowitch\PHPneeds
+namespace Mertowitch\Phpneeds
 {
 
 	use PDO;
 	use PDOException;
 
-	class database
+	class Database
 	{
 		private static ?PDO $instance = null;
 		private object $config;

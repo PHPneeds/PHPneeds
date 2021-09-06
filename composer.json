@@ -1,0 +1,30 @@
+{
+	"name": "mertowitch/phpneeds",
+	"description": "PHPneeds is a lightweight non-MVC PHP library for quickly start a project.",
+	"homepage": "https://www.phpneeds.xyz/",
+	"keywords": [
+		"non-mvc",
+		"NoFrameWork",
+		"phpneeds",
+		"php",
+		"lightweight"
+	],
+	"type": "project",
+	"license": "MIT",
+	"require": {
+		"php": ">=8.0",
+		"ext-pdo": "*"
+	},
+	"apcu-autoloader": true,
+	"autoload": {
+		"psr-4": {
+			"Mertowitch\\Phpneeds\\": "Libs/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Mertcan Ayhan",
+			"email": "mertowitch@gmail.com"
+		}
+	]
+}
