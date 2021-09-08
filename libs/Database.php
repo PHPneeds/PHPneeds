@@ -20,7 +20,7 @@ namespace Mertowitch\Phpneeds
 
 		private function _getConfig(): void
 		{
-			( $this->config = include( __DIR__ . '/../Confs/conf.db.' . $this->configName . '.php' ) );
+			( $this->config = include( __DIR__ . '/../confs/conf.db.' . $this->configName . '.php' ) );
 		}
 
 		public static function getInstance( string $configName = 'default' ): PDO

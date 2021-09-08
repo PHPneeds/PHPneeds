@@ -15,10 +15,9 @@
 		"php": ">=8.0",
 		"ext-pdo": "*"
 	},
-	"apcu-autoloader": true,
 	"autoload": {
 		"psr-4": {
-			"Mertowitch\\Phpneeds\\": "Libs/"
+			"Mertowitch\\Phpneeds\\": "libs/"
 		}
 	},
 	"authors": [
@@ -26,5 +25,9 @@
 			"name": "Mertcan Ayhan",
 			"email": "mertowitch@gmail.com"
 		}
-	]
+	],
+	"config": {
+		"optimize-autoloader": true,
+		"sort-packages": true
+	}
 }
