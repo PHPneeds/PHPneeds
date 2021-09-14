@@ -82,29 +82,22 @@ namespace Mertowitch\Phpneeds
 		 */
 		public function destroy( string $sessionID ): bool
 		{
-			$result = false;
-
-			switch ( self::$config->MODE )
+			return match ( self::$config->MODE )
 			{
-				case 'files':
-					$result = unlink( self::$config->PATH . 'sess_' . $sessionID );
-					break;
-
-				case 'redis':
-
-					$result = (bool) self::$objRedis->del( self::$config->NAME . ':' . $sessionID );
-
-					break;
-			}
-
-			return $result;
+				'files' => unlink( self::$config->PATH . 'sess_' . $sessionID ),
+				'redis' => (bool) self::$objRedis->del( self::$config->NAME . ':' . $sessionID ),
+				default => false,
+			};
 		}
 
+		/**
+		 * @throws \JsonException
+		 */
 		public function getByUserName( string $userName ): array
 		{
 			$ArrSession = array();
 
-			foreach ( $this->SessionList() as $session )
+			foreach ( $this->getList() as $session )
 			{
 				$strlen  = strlen( $userName );
 				$pattern = "\"UserName\";s:{$strlen}:\"{$userName}\"";
@@ -117,10 +110,12 @@ namespace Mertowitch\Phpneeds
 			return $ArrSession;
 		}
 
-		public function sessionList( $outputFormat = 'array' ): array
+		/**
+		 * @throws \JsonException
+		 */
+		public function getList( string $outputFormat = 'array' ): array
 		{
 			$result = array();
-			$output = '';
 
 			switch ( self::$config->MODE )
 			{
@@ -156,11 +151,18 @@ namespace Mertowitch\Phpneeds
 					break;
 			}
 
-			return match ( $outputFormat )
+			try
 			{
-				'array' => $result,
-				'json' => json_encode( $result, JSON_FORCE_OBJECT ),
-			};
+				return match ( $outputFormat )
+				{
+					'array' => $result,
+					'json' => json_encode( $result, JSON_THROW_ON_ERROR | JSON_FORCE_OBJECT ),
+				};
+			}
+			catch ( \JsonException $e )
+			{
+				throw new \JsonException ( $e->getMessage() );
+			}
 		}
 
 	}
