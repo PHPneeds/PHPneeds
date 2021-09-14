@@ -9,25 +9,25 @@ namespace Mertowitch\Phpneeds
 	class Database
 	{
 		private static ?PDO $instance = null;
-		private object $config;
-		private string $configName;
+		private static object $config;
+		private static string $configName;
 
 		public function __construct( string $configName = 'default' )
 		{
-			$this->configName = $configName;
-			$this->_getConfig();
+			self::$configName = $configName;
+			self::_getConfig();
 		}
 
-		private function _getConfig(): void
+		private static function _getConfig(): void
 		{
-			( $this->config = include( __DIR__ . '/../confs/conf.db.' . $this->configName . '.php' ) );
+			self::$config = include( __DIR__ . '/../confs/conf.db.' . self::$configName . '.php' );
 		}
 
 		public static function getInstance( string $configName = 'default' ): PDO
 		{
 			if ( self::$instance === null )
 			{
-				self::$instance = ( new database( $configName ) )->_getNewInstance();
+				self::$instance = ( new self( $configName ) )->_getNewInstance();
 			}
 
 			return self::$instance;
@@ -42,7 +42,7 @@ namespace Mertowitch\Phpneeds
 					PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION
 				);
 
-				$newDbInstance = new PDO( $this->config->DATABASE_TYPE . ':host=' . $this->config->DATABASE_HOST . ';port=' . $this->config->DATABASE_PORT . ';dbname=' . $this->config->DATABASE_NAME . ';charset=utf8', $this->config->DATABASE_USER, $this->config->DATABASE_PASS, $options );
+				$newDbInstance = new PDO( self::$config->TYPE . ':host=' . self::$config->HOST . ';port=' . self::$config->PORT . ';dbname=' . self::$config->NAME . ';charset=utf8', self::$config->USER, self::$config->PASS, $options );
 			}
 			catch ( PDOException $e )
 			{
@@ -54,7 +54,7 @@ namespace Mertowitch\Phpneeds
 
 		public static function getNewInstance( string $configName = 'default' ): PDO
 		{
-			return ( new database( $configName ) )->_getNewInstance();
+			return ( new self( $configName ) )->_getNewInstance();
 		}
 	}
 }
