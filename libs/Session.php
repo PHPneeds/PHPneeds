@@ -1,8 +1,22 @@
 <?php declare( strict_types=1 );
 
+/*
+ * This file is part of PHPneeds.
+ *
+ * (c) Mertcan Ayhan <mertowitch@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Mertowitch\Phpneeds
 {
 
+	/**
+	 * Class Session
+	 *
+	 * @package Mertowitch\Phpneeds
+	 */
 	class Session
 	{
 		private static object $config;
@@ -100,13 +114,16 @@ namespace Mertowitch\Phpneeds
 			foreach ( $this->getList() as $session )
 			{
 				$strlen  = strlen( $userName );
-				$pattern = "\"UserName\";s:{$strlen}:\"{$userName}\"";
+				$pattern = "UserName|s:{$strlen}:\"{$userName}\"";
+
 				if ( str_contains( $session['data'], $pattern ) )
 				{
+//					var_dump($session);
 					$ArrSession[] = $session;
 				}
 			}
 
+//			$ArrSession[0]=$pattern;
 			return $ArrSession;
 		}
 
