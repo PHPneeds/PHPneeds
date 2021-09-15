@@ -135,9 +135,9 @@ namespace Mertowitch\Phpneeds
 
 				case 'redis':
 
-					$ArrSessionNames = self::$objRedis->keys( self::$config->NAME . '*' );
+					$arrSessionNames = self::$objRedis->keys( self::$config->NAME . '*' ) ?: [];
 
-					foreach ( $ArrSessionNames as $sessionName )
+					foreach ( $arrSessionNames as $sessionName )
 					{
 						$session = self::$objRedis->get( $sessionName );
 
