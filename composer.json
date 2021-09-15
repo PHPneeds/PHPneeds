@@ -30,5 +30,7 @@
 	"config": {
 		"optimize-autoloader": true,
 		"sort-packages": true
-	}
+	},
+	"minimum-stability": "stable",
+	"prefer-stable": true
 }
