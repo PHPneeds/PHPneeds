@@ -1,11 +1,11 @@
-<p align="center">
-  <img src="https://www.phpneeds.xyz/storage/images/logo_256x50.png" alt="PHPneeds"><br>
+![PHPneeds Logo](/storage/images/logo_256x50.png)
+
 PHPneeds is a lightweight non-MVC PHP library for quickly start a project.
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE)
 [![Total Downloads][ico-downloads]][link-downloads]
-</p>
+
 
 #
 
