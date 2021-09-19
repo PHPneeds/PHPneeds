@@ -20,14 +20,14 @@ namespace Mertowitch\Phpneeds
 	class Session
 	{
 		private static object $config;
-		private static \Redis $objRedis;
+		private static Redis $objRedis;
 
 		/**
 		 * Session constructor.
 		 *
-		 * @param \Redis $objRedis
+		 * @param Redis $objRedis
 		 */
-		public function __construct( \Redis $objRedis )
+		public function __construct( Redis $objRedis )
 		{
 			self::_getConfig();
 			self::$objRedis = $objRedis;
@@ -114,7 +114,7 @@ namespace Mertowitch\Phpneeds
 			foreach ( $this->getList() as $session )
 			{
 				$strlen  = strlen( $userName );
-				$pattern = "UserName|s:{$strlen}:\"{$userName}\"";
+				$pattern = "UserName|s:$strlen:\"$userName\"";
 
 				if ( str_contains( $session['data'], $pattern ) )
 				{
