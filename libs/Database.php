@@ -15,9 +15,9 @@ namespace Mertowitch\Phpneeds
 	use PDO;
 	use PDOException;
 
-	class Database
+	class Database extends PDO
 	{
-		private static ?PDO $instance = null;
+		private static ?Database $instance = null;
 		private static object $config;
 		private static string $configName;
 
@@ -25,6 +25,11 @@ namespace Mertowitch\Phpneeds
 		{
 			self::$configName = $configName;
 			self::_getConfig();
+
+			parent::__construct( self::$config->TYPE . ':host=' . self::$config->HOST . ';port=' . self::$config->PORT . ';dbname=' . self::$config->NAME . ';charset=utf8', self::$config->USER, self::$config->PASS );
+
+			$this->setAttribute( PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC );
+			$this->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 		}
 
 		private static function _getConfig(): void
@@ -32,7 +37,7 @@ namespace Mertowitch\Phpneeds
 			self::$config = include( __DIR__ . '/../confs/conf.db.' . self::$configName . '.php' );
 		}
 
-		public static function getInstance( string $configName = 'default' ): PDO
+		public static function getInstance( string $configName = 'default' ): Database
 		{
 			if ( self::$instance === null )
 			{
@@ -42,16 +47,11 @@ namespace Mertowitch\Phpneeds
 			return self::$instance;
 		}
 
-		private function _getNewInstance(): PDO
+		private function _getNewInstance(): Database
 		{
 			try
 			{
-				$options = array(
-					PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-					PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION
-				);
-
-				$newDbInstance = new PDO( self::$config->TYPE . ':host=' . self::$config->HOST . ';port=' . self::$config->PORT . ';dbname=' . self::$config->NAME . ';charset=utf8', self::$config->USER, self::$config->PASS, $options );
+				$newDbInstance = new self( self::$configName );
 			}
 			catch ( PDOException $e )
 			{
@@ -61,7 +61,7 @@ namespace Mertowitch\Phpneeds
 			return $newDbInstance;
 		}
 
-		public static function getNewInstance( string $configName = 'default' ): PDO
+		public static function getNewInstance( string $configName = 'default' ): Database
 		{
 			return ( new self( $configName ) )->_getNewInstance();
 		}
