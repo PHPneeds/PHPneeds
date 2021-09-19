@@ -14,7 +14,7 @@ PHPneeds is a lightweight non-MVC PHP library for quickly start a project.
 - [Mertcan Ayhan](mailto:mertowitch@gmail.com) ([LinkedIn](https://www.linkedin.com/in/mertcan-ayhan/))
 
 ### License
-The code for Predis is distributed under the terms of the MIT license (see [LICENSE](LICENSE)).
+The code for PHPneeds is distributed under the terms of the MIT license (see [LICENSE](LICENSE)).
 
 [ico-version]: https://img.shields.io/packagist/v/mertowitch/phpneeds.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
