@@ -2,21 +2,19 @@
 
 PHPneeds is a lightweight non-MVC PHP library for quickly start a project.
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE)
-[![Total Downloads][ico-downloads]][link-downloads]
-![GitHub commit activity][ico-activity]
-
+[![Latest Stable Version](http://poser.pugx.org/mertowitch/phpneeds/v)](https://packagist.org/packages/mertowitch/phpneeds)
+[![Total Downloads](http://poser.pugx.org/mertowitch/phpneeds/downloads)](https://packagist.org/packages/mertowitch/phpneeds)
+[![Latest Unstable Version](http://poser.pugx.org/mertowitch/phpneeds/v/unstable)](https://packagist.org/packages/mertowitch/phpneeds)
+[![License](http://poser.pugx.org/mertowitch/phpneeds/license)](https://packagist.org/packages/mertowitch/phpneeds)
+[![PHP Version Require](http://poser.pugx.org/mertowitch/phpneeds/require/php)](https://packagist.org/packages/mertowitch/phpneeds)
 
 #
 
-### Author ###
-
+### Author
 - [Mertcan Ayhan](mailto:mertowitch@gmail.com) ([LinkedIn](https://www.linkedin.com/in/mertcan-ayhan/))
 
 
-### License ###
-
+### License
 The code for Predis is distributed under the terms of the MIT license (see [LICENSE](LICENSE)).
 
 [ico-version]: https://img.shields.io/packagist/v/mertowitch/phpneeds.svg?style=flat-square
