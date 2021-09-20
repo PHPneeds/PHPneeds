@@ -12,6 +12,8 @@
 namespace Mertowitch\Phpneeds
 {
 
+	use JsonException;
+
 	/**
 	 * Class Session
 	 *
@@ -105,7 +107,7 @@ namespace Mertowitch\Phpneeds
 		}
 
 		/**
-		 * @throws \JsonException
+		 * @throws JsonException
 		 */
 		public function getByUserName( string $userName ): array
 		{
@@ -128,7 +130,7 @@ namespace Mertowitch\Phpneeds
 		}
 
 		/**
-		 * @throws \JsonException
+		 * @throws JsonException
 		 */
 		public function getList( string $outputFormat = 'array' ): array
 		{
@@ -176,9 +178,9 @@ namespace Mertowitch\Phpneeds
 					'json' => json_encode( $result, JSON_THROW_ON_ERROR | JSON_FORCE_OBJECT ),
 				};
 			}
-			catch ( \JsonException $e )
+			catch ( JsonException $e )
 			{
-				throw new \JsonException ( $e->getMessage() );
+				throw new JsonException ( $e->getMessage() );
 			}
 		}
 
