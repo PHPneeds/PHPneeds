@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased](https://github.com/mertowitch/PHPneeds/compare/v0.3.2...HEAD)
 
-## [0.3.2] - 2021-09-20
+## [v0.3.2] - 2021-09-20
 
 ### Changed
 
@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file.
 - Database class changed ([detail](https://github.com/mertowitch/PHPneeds/compare/v0.3.1...v0.3.2#diff-a71fd8e5cd2d33de5278493e2f5f04aeea25ed26cf500d65742d492eb39afec8))
 - Session class changed ([detail](https://github.com/mertowitch/PHPneeds/compare/v0.3.1...v0.3.2#diff-e6e35f5873800dc7a0e2c9ce9e96e63f488fa446e1019f59797b9c1f08575dcc))
 
-## [0.3.1] - 2021-09-17
+## [v0.3.1] - 2021-09-17
 
 ### Changed
 
