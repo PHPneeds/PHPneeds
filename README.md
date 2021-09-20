@@ -8,7 +8,8 @@ PHPneeds is a lightweight non-MVC PHP library for quickly start a project.
 [![License](http://poser.pugx.org/mertowitch/phpneeds/license)](https://packagist.org/packages/mertowitch/phpneeds)
 [![Total Downloads](http://poser.pugx.org/mertowitch/phpneeds/downloads)](https://packagist.org/packages/mertowitch/phpneeds)
 
-#
+### About ###
+PHPneeds is an attempt to show that it's not necessary to use MVC and FRAMEWORK in every project, it can be done also old-school way without spaghetti.
 
 ### Author
 - [Mertcan Ayhan](mailto:mertowitch@gmail.com) ([LinkedIn](https://www.linkedin.com/in/mertcan-ayhan/))
