@@ -1,6 +1,11 @@
 # Changelog
 
 ## [Unreleased](https://github.com/mertowitch/PHPneeds/compare/v0.3.2...HEAD)
+- /images directory moved to [/public/assets/images](/public/assets/images)
+- Some edits on;
+  - README.md
+  - CHANGELOG.md
+
 
 ## [v0.3.2] - 2021-09-20
 ### Changed
