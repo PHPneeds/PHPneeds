@@ -15,13 +15,28 @@ namespace Mertowitch\Phpneeds
 	use PDO;
 	use PDOException;
 
+	/**
+	 * Class Database
+	 */
 	class Database extends PDO
 	{
+		/**
+		 * @var Database|null
+		 */
 		private static ?Database $instance = null;
+		/**
+		 * @var object
+		 */
 		private static object $config;
+		/**
+		 * @var string
+		 */
 		private static string $configName;
 
-		public function __construct( string $configName = 'default' )
+		/**
+		 * @param string $configName
+		 */
+		private function __construct( string $configName = 'default' )
 		{
 			self::$configName = $configName;
 			self::_getConfig();
@@ -37,6 +52,11 @@ namespace Mertowitch\Phpneeds
 			self::$config = include( __DIR__ . '/../confs/conf.db.' . self::$configName . '.php' );
 		}
 
+		/**
+		 * @param string $configName
+		 *
+		 * @return Database
+		 */
 		public static function getInstance( string $configName = 'default' ): Database
 		{
 			if ( self::$instance === null )
@@ -47,6 +67,9 @@ namespace Mertowitch\Phpneeds
 			return self::$instance;
 		}
 
+		/**
+		 * @return Database
+		 */
 		private function _getNewInstance(): Database
 		{
 			try
@@ -61,6 +84,11 @@ namespace Mertowitch\Phpneeds
 			return $newDbInstance;
 		}
 
+		/**
+		 * @param string $configName
+		 *
+		 * @return Database
+		 */
 		public static function getNewInstance( string $configName = 'default' ): Database
 		{
 			return ( new self( $configName ) )->_getNewInstance();
