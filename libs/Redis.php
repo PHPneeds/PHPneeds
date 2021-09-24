@@ -61,10 +61,5 @@ namespace Mertowitch\Phpneeds
 			return $newRedisInstance;
 		}
 
-//		public function set( $key, $value, $timeout = null ): bool
-//		{
-//			$key = 'prefix_' . $key;
-//			return parent::set( $key, $value, $timeout );
-//		}
 	}
 }
