@@ -3,6 +3,7 @@
 ## [Unreleased](https://github.com/mertowitch/PHPneeds/compare/v0.3.2...HEAD)
 ### Changed
 - **/images** directory moved to [/public/assets/images](/public/assets/images)
+- [**User class**](/libs/User.php) added
 - Some edits on;
   - README.md
   - CHANGELOG.md

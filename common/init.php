@@ -20,3 +20,7 @@ $objSession->init();
 // ********DATABASE*************************
 $objDatabase = Database::getInstance();
 // ********DATABASE*************************
+
+// ********USER*****************************
+$objUser = new User( $objDatabase );
+// ********DATABASE*************************
