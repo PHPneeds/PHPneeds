@@ -46,6 +46,8 @@ namespace Mertowitch\Phpneeds
 
 				$newRedisInstance->connect( self::$config->HOST, self::$config->PORT, 1, null, 0, 0 );
 
+				$newRedisInstance->setOption( self::OPT_PREFIX, self::$config->PREFIX );
+
 				if ( str_contains( session_save_path(), 'auth=' ) )
 				{
 					$newRedisInstance->auth( self::$config->PASS );
@@ -58,5 +60,11 @@ namespace Mertowitch\Phpneeds
 
 			return $newRedisInstance;
 		}
+
+//		public function set( $key, $value, $timeout = null ): bool
+//		{
+//			$key = 'prefix_' . $key;
+//			return parent::set( $key, $value, $timeout );
+//		}
 	}
 }
