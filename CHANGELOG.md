@@ -1,9 +1,11 @@
 # Changelog
 
 ## [Unreleased](https://github.com/mertowitch/PHPneeds/compare/v0.3.2...HEAD)
-### Changed
-- **/images** directory moved to [/public/assets/images](/public/assets/images)
+### Added
 - [**User class**](/libs/User.php) added
+### Changed
+- User object added to [init.php](/common/init.php)
+- **/images** directory moved to [/public/assets/images](/public/assets/images)
 - Some edits on;
   - README.md
   - CHANGELOG.md
