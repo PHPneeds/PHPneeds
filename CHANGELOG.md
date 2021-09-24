@@ -3,6 +3,7 @@
 ## [Unreleased](https://github.com/mertowitch/PHPneeds/compare/v0.3.2...HEAD)
 ### Added
 - [**User class**](/libs/User.php) added
+- "PREFIX" added to Redis class and config
 ### Changed
 - **User object** added to [init.php](/common/init.php)
 - **/images** directory moved to [/public/assets/images](/public/assets/images)
