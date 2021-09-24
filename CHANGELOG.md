@@ -4,7 +4,7 @@
 ### Added
 - [**User class**](/libs/User.php) added
 ### Changed
-- User object added to [init.php](/common/init.php)
+- **User object** added to [init.php](/common/init.php)
 - **/images** directory moved to [/public/assets/images](/public/assets/images)
 - Some edits on;
   - README.md
