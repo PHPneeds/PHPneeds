@@ -2,11 +2,12 @@
 
 PHPneeds is a lightweight non-MVC PHP library for quickly start a project.
 
-[![Latest Stable Version](http://poser.pugx.org/mertowitch/phpneeds/v)](https://packagist.org/packages/mertowitch/phpneeds)
-[![PHP Version Require](http://poser.pugx.org/mertowitch/phpneeds/require/php)](https://packagist.org/packages/mertowitch/phpneeds)
-[![Latest Unstable Version](http://poser.pugx.org/mertowitch/phpneeds/v/unstable)](https://packagist.org/packages/mertowitch/phpneeds)
-[![License](http://poser.pugx.org/mertowitch/phpneeds/license)](https://packagist.org/packages/mertowitch/phpneeds)
-[![Total Downloads](http://poser.pugx.org/mertowitch/phpneeds/downloads)](https://packagist.org/packages/mertowitch/phpneeds)
+[![Latest Stable Version](https://poser.pugx.org/mertowitch/phpneeds/v)](https://packagist.org/packages/mertowitch/phpneeds)
+[![PHP Version Require](https://poser.pugx.org/mertowitch/phpneeds/require/php)](https://packagist.org/packages/mertowitch/phpneeds)
+[![Latest Unstable Version](https://poser.pugx.org/mertowitch/phpneeds/v/unstable)](https://packagist.org/packages/mertowitch/phpneeds)
+[![License](https://poser.pugx.org/mertowitch/phpneeds/license)](https://packagist.org/packages/mertowitch/phpneeds)
+[![Total Downloads](https://poser.pugx.org/mertowitch/phpneeds/downloads)](https://packagist.org/packages/mertowitch/phpneeds)
+![Total Downloads](https://img.shields.io/badge/developer-Friendly-brightgreen)
 
 ### About ###
 PHPneeds is an attempt to show that it's not necessary to use MVC and FRAMEWORK in every project, it can be done also old-school way without spaghetti.
