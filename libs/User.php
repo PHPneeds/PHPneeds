@@ -12,85 +12,90 @@
 namespace Mertowitch\Phpneeds
 {
 
-	use PDO;
+    use PDO;
 
-	/**
-	 * Class User
-	 */
-	class User
-	{
+    /**
+     * Class User
+     */
+    class User
+    {
 
-		private Database $objDatabase;
+        private Database $objDatabase;
 
-		public function __construct( Database $objDatabase )
-		{
-			$this->objDatabase = $objDatabase;
-		}
+        public function __construct( Database $objDatabase )
+        {
+            $this->objDatabase = $objDatabase;
+        }
 
-		public function getByID( int $userID ): array|bool
-		{
-			if ( $return = $this->_getByID( $userID ) )
-			{
-				return $return;
-			}
+        public function getByID( int $userID ): array|bool
+        {
+            if ( $return = $this->_getByID( $userID ) )
+            {
+                return $return;
+            }
 
-			return false;
-		}
+            return false;
+        }
 
-		private function _getByID( int $userID ): array|bool
-		{
-			$qryUser = $this->objDatabase->prepare( 'SELECT * FROM `users` WHERE `ID`=:ID LIMIT 1' );
-			$qryUser->bindParam( ':ID', $userID, PDO::PARAM_INT );
-			$qryUser->execute();
+        private function _getByID( int $userID ): array|bool
+        {
+            $qryUser = $this->objDatabase->prepare( 'SELECT * FROM `users` WHERE `ID`=:ID LIMIT 1' );
+            $qryUser->bindParam( ':ID', $userID, PDO::PARAM_INT );
+            $qryUser->execute();
 
-			return $qryUser->fetch();
-		}
+            return $qryUser->fetch();
+        }
 
-		public function getAll(): array|bool
-		{
-			if ( $return = $this->_getAll() )
-			{
-				return $return;
-			}
+        public function getAll(): array|bool
+        {
+            if ( $return = $this->_getAll() )
+            {
+                return $return;
+            }
 
-			return false;
-		}
+            return false;
+        }
 
-		private function _getAll(): array|bool
-		{
-			$qryUser = $this->objDatabase->query( 'SELECT * FROM `users`' );
+        private function _getAll(): array|bool
+        {
+            $qryUser = $this->objDatabase->query( 'SELECT * FROM `users`' );
 
-			return $qryUser->fetchAll();
-		}
+            return $qryUser->fetchAll();
+        }
 
-		public function getByUsername( string $username ): array|bool
-		{
-			if ( $return = $this->_getByUsername( $username ) )
-			{
-				return $return;
-			}
+        public function getByUsername( string $username ): array|bool
+        {
+            if ( $return = $this->_getByUsername( $username ) )
+            {
+                return $return;
+            }
 
-			return false;
-		}
+            return false;
+        }
 
-		private function _getByUsername( string $username ): array|bool
-		{
-			$qryUser = $this->objDatabase->prepare( 'SELECT * FROM `users` WHERE `username`=:username LIMIT 1' );
-			$qryUser->bindParam( ':username', $username, PDO::PARAM_STR );
-			$qryUser->execute();
+        private function _getByUsername( string $username ): array|bool
+        {
+            $qryUser = $this->objDatabase->prepare( 'SELECT * FROM `users` WHERE `username`=:username LIMIT 1' );
+            $qryUser->bindParam( ':username', $username, PDO::PARAM_STR );
+            $qryUser->execute();
 
-			return $qryUser->fetch();
-		}
+            return $qryUser->fetch();
+        }
 
-		public function verifyCredential( string $username, string $password ): bool
-		{
-			return $this->_verifyCredential( $username, $password );
-		}
+        public function login( string $username, string $password ): bool
+        {
+            if ( ! $this->_verifyCredential( $username, $password ) )
+            {
+                return false;
+            }
 
-		private function _verifyCredential( string $username, string $password ): bool
-		{
-			return ( $arrUser = $this->_getByUsername( $username ) ) && $arrUser['password'] === md5( $password );
-		}
+            return true;
+        }
 
-	}
+        private function _verifyCredential( string $username, string $password ): bool
+        {
+            return ( $arrUser = $this->_getByUsername( $username ) ) && $arrUser['password'] === md5( $password );
+        }
+
+    }
 }
