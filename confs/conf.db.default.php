@@ -11,8 +11,8 @@ return (object) array(
     'TABLES' => (object) array(
 
         'USER' => (object) array(
-            'NAME'        => 'users',
-            'COLLATE'     => 'utf8mb4_general_ci',
+            'NAME'       => 'users',
+            'COLLATE'    => 'utf8mb4_general_ci',
             'PRIMARYKEY' => 'ID',
 
             'FIELDS' => array(

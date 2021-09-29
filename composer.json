@@ -1,38 +1,38 @@
 {
-	"name": "mertowitch/phpneeds",
-	"description": "PHPneeds is a lightweight non-MVC PHP library for quickly start a project.",
-	"homepage": "https://www.phpneeds.xyz/",
-	"keywords": [
-		"non-mvc",
-		"NoFrameWork",
-		"phpneeds",
-		"php",
-		"lightweight"
-	],
-	"type": "project",
-	"license": "MIT",
-	"require": {
-		"php": ">=8.0",
-		"ext-pdo": "*",
-		"ext-pdo_mysql": "*",
-		"ext-redis": "*",
-		"ext-json": "*"
-	},
-	"autoload": {
-		"psr-4": {
-			"Mertowitch\\Phpneeds\\": "libs/"
-		}
-	},
-	"authors": [
-		{
-			"name": "Mertcan Ayhan",
-			"email": "mertowitch@gmail.com"
-		}
-	],
-	"config": {
-		"optimize-autoloader": true,
-		"sort-packages": true
-	},
-	"minimum-stability": "dev",
-	"prefer-stable": true
+    "name": "mertowitch/phpneeds",
+    "description": "PHPneeds is a lightweight non-MVC PHP library for quickly start a project.",
+    "homepage": "https://www.phpneeds.xyz/",
+    "keywords": [
+        "non-mvc",
+        "NoFrameWork",
+        "phpneeds",
+        "php",
+        "lightweight"
+    ],
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.0",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
+        "ext-redis": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mertowitch\\Phpneeds\\": "libs/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mertcan Ayhan",
+            "email": "mertowitch@gmail.com"
+        }
+    ],
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
