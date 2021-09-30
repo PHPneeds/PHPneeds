@@ -94,22 +94,53 @@ namespace Mertowitch\Phpneeds
             return ( new self( $configName ) )->_getNewInstance();
         }
 
+        /**
+         * @param string $tableName
+         *
+         * @return bool
+         */
         public function createTable( string $tableName ): mixed
         {
+
+            // check the "tablename" in schema. if not found in schema, return false
+            if ( ! $schema = $this->getSchema( $tableName ) )
+            {
+                return false;
+            }
+
             if ( $this->isTableExist( $tableName ) )
             {
                 return false;
             }
 
-            $strFields = '';
-            $schema    = $this->getSchema( 'USER' );
+            $strFields      = '';
+            $arrUniqueIndex = array();
 
-            foreach ( (array) $schema->FIELDS as $field )
+            foreach ( $schema->FIELDS as $field )
             {
-                $strFields .= "`{$field['NAME']}` {$field['TYPE']}({$field['LENGHT']}) NOT NULL {$field['AUTO_INCREMENT']},";
+                $strFields .= "`{$field['NAME']}` {$field['TYPE']}({$field['LENGHT']}) NOT NULL {$field['AUTO_INCREMENT']}, ";
             }
 
-            $this->exec( "CREATE TABLE IF NOT EXISTS `{$schema->NAME}` ( {$strFields} PRIMARY KEY (`{$schema->PRIMARYKEY}`) USING BTREE )
+            foreach ( $schema->UNIQUEINDEX as $uniqueIndexKey )
+            {
+                $arrUniqueIndexKeyItem = array();
+
+                foreach ( $uniqueIndexKey as $uniqueIndexKeyItem )
+                {
+                    $arrUniqueIndexKeyItem [] = '`' . $schema->FIELDS[ $uniqueIndexKeyItem ]['NAME'] . '`';
+                }
+
+                $strUniqueIndexKey = implode( ',', $arrUniqueIndexKeyItem );
+
+                $arrUniqueIndex [] = "UNIQUE INDEX `{$schema->FIELDS[$uniqueIndexKey[0]]['NAME']}` ({$strUniqueIndexKey}) USING BTREE";
+                unset( $arrUniqueIndexKeyItem, $strUniqueIndexKey );
+            }
+
+            $strUniqueIndex = implode( ',', $arrUniqueIndex );
+
+//            return $strUniqueIndex;
+
+            $this->exec( "CREATE TABLE IF NOT EXISTS `{$schema->NAME}` ( {$strFields} PRIMARY KEY (`{$schema->PRIMARYKEY}`) USING BTREE, {$strUniqueIndex} )
                 COLLATE='{$schema->COLLATE}'
                 ENGINE=InnoDB
                 ROW_FORMAT=DYNAMIC
@@ -123,14 +154,34 @@ namespace Mertowitch\Phpneeds
             return true;
         }
 
-        private function isTableExist( string $tableName ): bool
+        /**
+         * @param string $tableName
+         *
+         * @return object
+         */
+        public function getSchema( string $tableName ): object|bool
         {
-            return (bool) $this->query( "SHOW TABLES LIKE '{$tableName}'" )->fetch( PDO::FETCH_NUM );
+            if ( property_exists( self::$config->TABLES, $tableName ) && self::$config->TABLES->{$tableName} )
+            {
+                return self::$config->TABLES->{$tableName};
+            }
+
+            return false;
         }
 
-        private function getSchema( string $tableName ): object
+        /**
+         * @param string $tableName
+         *
+         * @return bool
+         */
+        private function isTableExist( string $tableName ): bool
         {
-            return self::$config->TABLES->{$tableName};
+            if ( $schema = $this->getSchema( $tableName ) )
+            {
+                return (bool) $this->query( "SHOW TABLES LIKE '{$schema->NAME}'" )->fetch( PDO::FETCH_NUM );
+            }
+
+            return false;
         }
 
     }
