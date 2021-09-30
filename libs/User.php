@@ -32,6 +32,19 @@ namespace Mertowitch\Phpneeds
         }
 
         /**
+         * @param int $lenght
+         *
+         * @return string
+         */
+        public static function getNewRandomPassword( int $lenght ): string
+        {
+            $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            $shfl  = str_shuffle( $chars );
+
+            return substr( $shfl, 9, $lenght );
+        }
+
+        /**
          * @param int $userID
          *
          * @return array|bool
@@ -153,7 +166,10 @@ namespace Mertowitch\Phpneeds
 
             try
             {
-                $schema = $this->objDatabase->getSchema( 'USER' );
+                if ( ! $schema = $this->objDatabase->getSchema( 'USER' ) )
+                {
+                    return false;
+                }
 
                 $sqlNewUser = "INSERT INTO `{$schema->NAME}` ( `{$schema->FIELDS['USERNAME']['NAME']}`, `{$schema->FIELDS['PASSWORD']['NAME']}` ) VALUES(:username, :password)";
 
@@ -163,6 +179,44 @@ namespace Mertowitch\Phpneeds
                 $qryNewUser->bindParam( ':password', $password, PDO::PARAM_STR );
 
                 if ( $qryNewUser->execute() )
+                {
+                    $result = true;
+                }
+            }
+            catch ( PDOException $e )
+            {
+                return false;
+            }
+
+            return $result;
+        }
+
+        public function changePassword( string $username, string $newPassword ): bool
+        {
+            if ( ! $this->_getByUsername( $username ) )
+            {
+                return false;
+            }
+
+            $result = false;
+
+            try
+            {
+                if ( ! $schema = $this->objDatabase->getSchema( 'USER' ) )
+                {
+                    return false;
+                }
+
+                $md5NewPassword = md5( $newPassword );
+
+                $sqlChangePassword = "UPDATE `{$schema->NAME}` SET `{$schema->FIELDS['USERNAME']['NAME']}`=:username, `{$schema->FIELDS['PASSWORD']['NAME']}`=:password";
+
+                $qryChangePassword = $this->objDatabase->prepare( $sqlChangePassword );
+
+                $qryChangePassword->bindParam( ':username', $username, PDO::PARAM_STR );
+                $qryChangePassword->bindParam( ':password', $md5NewPassword, PDO::PARAM_STR );
+
+                if ( $qryChangePassword->execute() )
                 {
                     $result = true;
                 }
