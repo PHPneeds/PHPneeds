@@ -1,8 +1,8 @@
 <?php declare( strict_types=1 );
 
-require_once __DIR__ . '/../../libs/Database.php';
+namespace Mertowitch\Phpneeds;
 
-use Mertowitch\Phpneeds\Database;
+require_once __DIR__ . "/../../vendor/autoload.php";
 
 // ********DATABASE*************************
 $objDatabase = Database::getInstance();
@@ -15,8 +15,10 @@ if ( ! $objDatabase->getSchema( 'USER' ) )
 
 if ( $objDatabase->createTable( 'USER' ) )
 {
+    // **green** success message
     echo "\n\n\033[32m\u{2713}  'users' table created successfuly! \033[0m\n\n\n";
 } else
 {
+    // **red** error message
     echo "\n\n\033[31m\u{274c}  'users' table could not created! \033[0m\n\n\n";
 }
