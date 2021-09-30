@@ -1,18 +1,27 @@
 # Changelog
 
-## [Unreleased](https://github.com/mertowitch/PHPneeds/compare/v0.3.2...HEAD)
+## [Unreleased](https://github.com/mertowitch/PHPneeds/compare/v0.4.0...HEAD)
+
+## [v0.4.0](https://github.com/mertowitch/PHPneeds/compare/v0.3.2...v0.4.0) - 2021-09-30
 ### Added
 - [**User class**](/libs/User.php) added
 - "PREFIX" added to [Redis class](/libs/Redis.php) and [Redis config](/confs/conf.redis.php)
+- "TABLES" schema added to [Database config](/confs/conf.db.default.php)
 - "/tools/database/**create_table_users.php**" added
+- "/tools/database/**create_user_admin.php**" added
+
+
 - new methods added to [Database class](/libs/Database.php)
   - ->createTable( string $tableName ): bool
   - ->isTableExist( string $tableName ): bool
   - ->getSchema( string $tableName ): object
-- new methods added to **User class**
+
+
+- new methods added to [User class](/libs/User.php)
   - ->login( string $username, string $password ): bool
   - ->_verifyCredential( string $username, string $password ): bool
   - ->createUser( string $username, string $password ): bool
+  - ->changePassword( string $username, string $newPassword ): bool
 
 ### Changed
 - **User object** added to [init.php](/common/init.php)
