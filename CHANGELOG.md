@@ -2,12 +2,14 @@
 
 ## [Unreleased](https://github.com/PHPneeds/PHPneeds/compare/v0.4.0...HEAD)
 ### Added
-- jquery 3.6.0 added to /public/assets/vendor/jquery
+- **jquery 3.6.0** added to /public/assets/vendor/jquery
+- **bootstrap 5.1.1** added to /public/assets/vendor/bootstrap
 
-New directories:
-- /public/assets/**css**/
-- /public/assets/**js**/
-- /public/assets/**vendor**/
+
+- New directories:
+  - /public/assets/**css**/
+  - /public/assets/**js**/
+  - /public/assets/**vendor**/
 
 ### Changed
 - config filenames extensions changed to ".sample"
