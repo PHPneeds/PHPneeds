@@ -17,8 +17,23 @@ PHPneeds is an attempt to show that it's not necessary to use MVC and FRAMEWORK 
 ----
 
 ### Installation
+"**--keep-vcs**" is important for upgrade the prject from git.
 ```
-composer create-project mertowitch/phpneeds your_project_name
+composer create-project phpneeds/phpneeds {your_project_name} --keep-vcs
+```
+
+----
+
+### Upgrade
+Composer cannot upgrade packages of type "**project**". You can upgrade this project files with "**git**".
+
+**important: Directory structure may change after upgrade via git**
+```
+git pull origin tags/v{version}
+```
+Classes will be upgrade via Composer. Because, "**Libs**" separated from base project
+```
+composer update
 ```
 
 ----
