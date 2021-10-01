@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/PHPneeds/PHPneeds/compare/v0.4.0...HEAD)
+## [Unreleased](https://github.com/PHPneeds/PHPneeds/compare/v1.0.0...HEAD)
+
+## [v1.0.0](https://github.com/PHPneeds/PHPneeds/compare/v0.4.0...v1.0.0) - 2021-10-02
 ### Added
 - **jquery 3.6.0** added to /public/assets/vendor/jquery
 - **bootstrap 5.1.1** added to /public/assets/vendor/bootstrap
@@ -13,6 +15,7 @@
 
 ### Changed
 - config filenames extensions changed to ".sample"
+- composer.json
 
 ### Removed
 - "**/libs/***" directory (separated to **PHPneeds/Libs** library)
