@@ -1,5 +1,5 @@
 {
-    "name": "mertowitch/phpneeds",
+    "name": "phpneeds/phpneeds",
     "description": "PHPneeds is a lightweight non-MVC PHP library for quickly start a project.",
     "homepage": "https://www.phpneeds.xyz/",
     "keywords": [
