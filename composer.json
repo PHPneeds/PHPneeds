@@ -16,12 +16,8 @@
         "ext-pdo": "*",
         "ext-pdo_mysql": "*",
         "ext-redis": "*",
-        "ext-json": "*"
-    },
-    "autoload": {
-        "psr-4": {
-            "Mertowitch\\Phpneeds\\": "libs/"
-        }
+        "ext-json": "*",
+        "phpneeds/libs": "*"
     },
     "authors": [
         {
