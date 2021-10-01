@@ -1,6 +1,14 @@
 # Changelog
 
 ## [Unreleased](https://github.com/mertowitch/PHPneeds/compare/v0.4.0...HEAD)
+### Added
+New directories:
+- /public/assets/**css**/
+- /public/assets/**js**/
+- /public/assets/**vendor**/**jquery**/
+
+### Changed
+- config filenames extensions changed to ".sample"
 
 ## [v0.4.0](https://github.com/mertowitch/PHPneeds/compare/v0.3.2...v0.4.0) - 2021-09-30
 ### Added
