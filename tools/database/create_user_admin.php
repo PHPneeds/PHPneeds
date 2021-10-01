@@ -1,8 +1,9 @@
 <?php declare( strict_types=1 );
 
-namespace Mertowitch\Phpneeds;
-
 require_once __DIR__ . "/../../vendor/autoload.php";
+
+use Phpneeds\Libs\Database;
+use Phpneeds\Libs\User;
 
 // ********DATABASE*************************
 $objDatabase = Database::getInstance();
