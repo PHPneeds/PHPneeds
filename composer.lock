@@ -4,20 +4,76 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e76084912cb66fbea961f515b80477b7",
-    "packages": [],
+    "content-hash": "4058b2500d76d7e0079a1b52bdfbd83f",
+    "packages": [
+        {
+            "name": "phpneeds/libs",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPneeds/Libs.git",
+                "reference": "06b75e06d630a333c6f78060e1f2316eadd1801e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPneeds/Libs/zipball/06b75e06d630a333c6f78060e1f2316eadd1801e",
+                "reference": "06b75e06d630a333c6f78060e1f2316eadd1801e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-pdo": "*",
+                "ext-pdo_mysql": "*",
+                "ext-redis": "*",
+                "php": ">=8.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phpneeds\\Libs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mertcan Ayhan",
+                    "email": "mertowitch@gmail.com"
+                }
+            ],
+            "description": "PHPneeds library (classes) package.",
+            "homepage": "https://www.phpneeds.xyz/",
+            "keywords": [
+                "NoFramework",
+                "lightweight",
+                "non-mvc",
+                "php",
+                "phpneeds"
+            ],
+            "support": {
+                "issues": "https://github.com/PHPneeds/Libs/issues",
+                "source": "https://github.com/PHPneeds/Libs/tree/main"
+            },
+            "time": "2021-10-01T17:51:08+00:00"
+        }
+    ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "phpneeds/libs": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=8.0",
+        "ext-json": "*",
         "ext-pdo": "*",
         "ext-pdo_mysql": "*",
-        "ext-redis": "*",
-        "ext-json": "*"
+        "ext-redis": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"
