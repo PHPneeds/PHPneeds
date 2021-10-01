@@ -1,4 +1,4 @@
-![PHPneeds Logo](https://raw.githubusercontent.com/mertowitch/PHPneeds/main/public/assets/images/logo_256x50.png)
+![PHPneeds Logo](https://raw.githubusercontent.com/PHPneeds/PHPneeds/main/public/assets/images/logo_256x50.png)
 
 PHPneeds is a lightweight non-MVC PHP library for quickly start a project.
 
