@@ -2,10 +2,13 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
-use Phpneeds\Libs\Database;
-use Phpneeds\Libs\Redis;
-use Phpneeds\Libs\Session;
-use Phpneeds\Libs\User;
+use Phpneeds\Libs\
+{
+    Database,
+    Redis,
+    Session,
+    User
+};
 
 // ********GLOBAL CONFIG*******************
 $configGlobal = include( __DIR__ . '/../confs/conf.global.php' );
