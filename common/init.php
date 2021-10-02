@@ -24,9 +24,20 @@ $objSession->init();
 // ********SESSION*************************
 
 // ********DATABASE*************************
-$objDatabase = Database::getInstance();
+try
+{
+    $objDatabase = Database::getInstance();
+}
+catch ( PDOException $e )
+{
+    $objDatabase = null;
+    echo 'ERROR: Database connection failed!';
+}
 // ********DATABASE*************************
 
 // ********USER*****************************
-$objUser = new User( $objDatabase );
+if ( $objDatabase )
+{
+    $objUser = new User( $objDatabase );
+}
 // ********DATABASE*************************

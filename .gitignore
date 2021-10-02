@@ -5,3 +5,5 @@
 
 /.well-known
 /examples
+
+composer.lock
