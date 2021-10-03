@@ -10,34 +10,34 @@ use Phpneeds\Libs\
     User
 };
 
-// ********GLOBAL CONFIG*******************
+// *****************************************
+// ********GLOBAL CONFIG********************
 $configGlobal = include( __DIR__ . '/../confs/conf.global.php' );
-// ********GLOBAL CONFIG*******************
+// ********GLOBAL CONFIG********************
 
-// ********REDIS***************************
+// *****************************************
+// ********REDIS****************************
 $objRedis = Redis::getInstance();
-// ********REDIS***************************
+// ********REDIS****************************
 
-// ********SESSION*************************
-$objSession = new Session( $objRedis );
-$objSession->init();
-// ********SESSION*************************
+// *****************************************
+// ********SESSION**************************
+if ( $objRedis )
+{
+    $objSession = new Session( $objRedis );
+    $objSession->init();
+}
+// ********SESSION**************************
 
+// *****************************************
 // ********DATABASE*************************
-try
-{
-    $objDatabase = Database::getInstance();
-}
-catch ( PDOException $e )
-{
-    $objDatabase = null;
-    echo 'ERROR: Database connection failed!';
-}
+$objDatabase = Database::getInstance();
 // ********DATABASE*************************
 
+// *****************************************
 // ********USER*****************************
 if ( $objDatabase )
 {
-    $objUser = new User( $objDatabase );
+    $objUser = new User( $objDatabase ) ?: null;
 }
-// ********DATABASE*************************
+// ********USER*****************************

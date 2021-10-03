@@ -2,6 +2,10 @@
 
 ## [Unreleased](https://github.com/PHPneeds/PHPneeds/compare/v1.0.0...HEAD)
 
+## [v1.0.1](https://github.com/PHPneeds/PHPneeds/compare/v0.4.0...v1.0.0) - 2021-10-02
+### Fixed
+- Error handling on Database and Redis ojbect creation in init.php
+
 ## [v1.0.0](https://github.com/PHPneeds/PHPneeds/compare/v0.4.0...v1.0.0) - 2021-10-02
 ### Added
 - **jquery 3.6.0** added to /public/assets/vendor/jquery
