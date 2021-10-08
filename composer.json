@@ -17,7 +17,8 @@
         "ext-pdo_mysql": "*",
         "ext-redis": "*",
         "ext-json": "*",
-        "phpneeds/libs": "*"
+        "phpneeds/libs": "*",
+        "ext-imagick": "*"
     },
     "authors": [
         {
