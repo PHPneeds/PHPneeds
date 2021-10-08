@@ -7,7 +7,8 @@ use Phpneeds\Libs\
     Database,
     Redis,
     Session,
-    User
+    User,
+    Image
 };
 
 // *****************************************
@@ -41,3 +42,7 @@ if ( $objDatabase )
     $objUser = new User( $objDatabase ) ?: null;
 }
 // ********USER*****************************
+
+// ********IMAGE****************************
+$objImage = new Image();
+// ********IMAGE****************************
