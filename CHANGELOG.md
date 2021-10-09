@@ -2,7 +2,18 @@
 
 ## [Unreleased](https://github.com/PHPneeds/PHPneeds/compare/v1.0.0...HEAD)
 
-## [v1.0.1](https://github.com/PHPneeds/PHPneeds/compare/v0.4.0...v1.0.0) - 2021-10-02
+## [v1.1.0](https://github.com/PHPneeds/PHPneeds/compare/v1.0.1...v1.1.0) - 2021-10-09
+### Added
+- Image class and config file
+
+### Changed
+- Image object added to /common/**init.php**
+- Namespace syntax changed in /common/**init.php**
+
+### Fixed
+- Some fixes
+
+## [v1.0.1](https://github.com/PHPneeds/PHPneeds/compare/v1.0.0...v1.0.1) - 2021-10-03
 ### Fixed
 - Error handling on Database and Redis ojbect creation in init.php
 
