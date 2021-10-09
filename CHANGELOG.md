@@ -5,6 +5,9 @@
 ## [v1.1.0](https://github.com/PHPneeds/PHPneeds/compare/v1.0.1...v1.1.0) - 2021-10-09
 ### Added
 - Image class and config file
+- Directories added:
+  - storage/images/**cache**
+  - storage/images/**origin**
 
 ### Changed
 - Image object added to /common/**init.php**
