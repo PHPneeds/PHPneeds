@@ -1,0 +1,17 @@
+<?php declare( strict_types=1 );
+
+return (object) array(
+    'PATH'      => array(
+        'ORIGIN' => __DIR__ . '/../storage/images/origin/',
+        'CACHE'  => __DIR__ . '/../storage/images/cache/'
+    ),
+    'WATERMARK' => array(
+        'TEXT1'   => 'PHP',
+        'TEXT2'   => 'needs',
+        'OPACITY' => .15,
+        'FONT'    => array(
+            'SIZE'  => 20,
+            'COLOR' => '#FFFFFF'
+        )
+    )
+);
