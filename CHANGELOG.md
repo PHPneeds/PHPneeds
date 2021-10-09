@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased](https://github.com/PHPneeds/PHPneeds/compare/v1.0.0...HEAD)
+## [Unreleased](https://github.com/PHPneeds/PHPneeds/compare/v1.1.0...HEAD)
 
 ## [v1.1.0](https://github.com/PHPneeds/PHPneeds/compare/v1.0.1...v1.1.0) - 2021-10-09
 ### Added
