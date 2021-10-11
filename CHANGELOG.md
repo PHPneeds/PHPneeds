@@ -2,6 +2,13 @@
 
 ## [Unreleased](https://github.com/PHPneeds/PHPneeds/compare/v1.1.0...HEAD)
 
+## [v1.2.0](https://github.com/PHPneeds/PHPneeds/compare/v1.1.0...v1.2.0) - 2021-10-11
+### Added
+- image.php added
+
+### Fixed
+- Some fixes
+
 ## [v1.1.0](https://github.com/PHPneeds/PHPneeds/compare/v1.0.1...v1.1.0) - 2021-10-09
 ### Added
 - Image class and config file
