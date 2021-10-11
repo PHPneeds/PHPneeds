@@ -2,6 +2,12 @@
 
 require_once __DIR__ . "/../../../common/init.php";
 
+if ( ! isset( $_GET['f'], $_GET['w'], $_GET['h'], $_GET['q'], $_GET['c'] ) )
+{
+    header( "HTTP/1.1 404 Not Found" );
+    exit;
+}
+
 function getHeaders( ...$args )
 {
     header( "Content-Type: image/jpeg" );
