@@ -21,8 +21,13 @@ PHPneeds is an attempt to show that it's not necessary to use MVC and FRAMEWORK 
 ```
 composer create-project phpneeds/phpneeds {your_project_name} --keep-vcs
 ```
-
 ----
+
+### NGINX Rewrite Rules
+#### for image.php
+```
+rewrite "^/assets/images/(.*)-w=([0-9]{1,4})-h=([0-9]{1,4})-q=([0-9]{1,4})-c=([0-1]{1,4}).jpg$" /assets/images/image.php?f=$1&w=$2&h=$3&q=$4&c=$5;
+```
 
 ### Upgrade
 Composer cannot upgrade packages of type "**project**". You can upgrade this project files with "**git**".
