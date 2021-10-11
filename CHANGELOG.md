@@ -1,6 +1,10 @@
 # Changelog
 
-## [Unreleased](https://github.com/PHPneeds/PHPneeds/compare/v1.1.0...HEAD)
+## [Unreleased](https://github.com/PHPneeds/PHPneeds/compare/v1.2.1...HEAD)
+
+## [v1.2.1](https://github.com/PHPneeds/PHPneeds/compare/v1.2.0...v1.2.1) - 2021-10-11
+### Fixed
+- image.php return 404 for direct access
 
 ## [v1.2.0](https://github.com/PHPneeds/PHPneeds/compare/v1.1.0...v1.2.0) - 2021-10-11
 ### Added
