@@ -2,6 +2,8 @@
 
 require_once __DIR__ . "/../../../common/init.php";
 
+header_remove( 'Link' );
+
 if ( ! isset( $_GET['f'], $_GET['w'], $_GET['h'], $_GET['q'], $_GET['c'] ) )
 {
     header( "HTTP/1.1 404 Not Found" );
@@ -30,7 +32,7 @@ function cleanInput( $var ): mixed
 
 try
 {
-    $getFilename = cleanInput( $_GET['f'] ) . '.jpg';
+    $getFilename = cleanInput( $_GET['f'] );
     $getWidth    = (int) cleanInput( $_GET['w'] );
     $getHeight   = (int) cleanInput( $_GET['h'] );
     $getQuality  = (int) cleanInput( $_GET['q'] );
@@ -45,10 +47,11 @@ catch ( Exception $e )
 try
 {
     $objImage
-        ->pick( $getFilename )
+        ->setOrigin( $getFilename )
         ->setWidth( $getWidth )
         ->setHeight( $getHeight )
-        ->setQuality( $getQuality );
+        ->setQuality( $getQuality )
+        ->setwatermark();
 
     if ( $getCrop === true )
     {
@@ -57,19 +60,13 @@ try
 
     $output = $objImage
         ->resize()
-        ->addWatermark()
         ->getBlob();
 
-    $fileInfo = $objImage->getCachedInfo();
+    $fileInfo = $objImage->getFileInfo();
 
     $etag = md5( $fileInfo['fileRealPath'] . $fileInfo['modifiedDate'] . strlen( $output ) );
 }
 catch ( \ImagickException $e )
-{
-    header( "HTTP/1.1 404 Not Found" );
-    exit;
-}
-catch ( \ImagickDrawException $d )
 {
     header( "HTTP/1.1 404 Not Found" );
     exit;
