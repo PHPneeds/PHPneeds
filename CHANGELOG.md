@@ -3,6 +3,13 @@
 ## [Unreleased](https://github.com/PHPneeds/PHPneeds/compare/v1.2.2...HEAD)
 
 ## [v1.2.2](https://github.com/PHPneeds/PHPneeds/compare/v1.2.1...v1.2.2) - 2021-10-21
+### Added
+- http/2 push added
+- extra headers added
+
+### Changed
+- init.php updated
+
 ### Fixed
 - image.php fixed for reconstructed Image class
 
