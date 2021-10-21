@@ -1,6 +1,10 @@
 # Changelog
 
-## [Unreleased](https://github.com/PHPneeds/PHPneeds/compare/v1.2.1...HEAD)
+## [Unreleased](https://github.com/PHPneeds/PHPneeds/compare/v1.2.2...HEAD)
+
+## [v1.2.2](https://github.com/PHPneeds/PHPneeds/compare/v1.2.1...v1.2.2) - 2021-10-21
+### Fixed
+- image.php fixed for reconstructed Image class
 
 ## [v1.2.1](https://github.com/PHPneeds/PHPneeds/compare/v1.2.0...v1.2.1) - 2021-10-11
 ### Fixed
